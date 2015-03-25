@@ -4,8 +4,8 @@
 	<groupId>cn.edu.cqu</groupId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>洗车订单系统</name>
-	<description>洗车订单系统</description>
+	<name>党务系统</name>
+	<description>党务系统</description>
 	<properties>
 		<java-version>1.8</java-version>
 		<org.springframework-version>4.1.0.RELEASE</org.springframework-version>
@@ -133,6 +133,26 @@
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 			<scope>test</scope>
+		</dependency>
+		
+		<!-- fileupload -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-fileupload</groupId>
+			<artifactId>commons-fileupload</artifactId>
+			<version>1.2.1</version>
+		</dependency>
+		
+		<!-- poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.5-FINAL</version>
 		</dependency>
 	</dependencies>
 	<artifactId>partysystem</artifactId>
