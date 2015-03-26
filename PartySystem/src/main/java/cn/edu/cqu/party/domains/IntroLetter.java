@@ -55,13 +55,13 @@ public class IntroLetter {
 	/**
 	 * 转接原因
 	 */
-	@Column(nullable=false,length=50)
+	@Column(nullable=true,length=255)
 	private String reason;
 	
 	/**
 	 * 抬头
 	 */
-	@Column(nullable=false,length=50)
+	@Column(nullable=false,length=255)
 	private String title;
 	
 	/**
@@ -79,13 +79,13 @@ public class IntroLetter {
 	/**
 	 * 备注
 	 */
-	@Column(nullable=false,length=500)
+	@Column(nullable=true,length=255)
 	private String content;
 	
 	/**
 	 * 回执意见
 	 */
-	@Column(nullable=false,length=500)
+	@Column(nullable=true,length=255)
 	private String opinion;
 
 	public Long getId() {

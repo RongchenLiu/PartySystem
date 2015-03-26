@@ -45,7 +45,7 @@ public class Log {
 	/**
 	 * 内容
 	 */
-	@Column(nullable=false,length=500)
+	@Column(nullable=false,length=255)
 	private String content;
 
 	public Long getId() {
