@@ -16,7 +16,7 @@ import javax.persistence.UniqueConstraint;
  *
  */
 @Entity
-@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "user_id","partyDueStandard_id"}) })
+@Table(uniqueConstraints = { @UniqueConstraint(columnNames = { "user_id"}) })
 public class PartyDue {
 	/**
 	 * 逻辑主键，自增长
@@ -32,8 +32,8 @@ public class PartyDue {
 	/**
 	 * 与党费标准关联
 	 */
-	@ManyToOne(optional=false)
-	private PartyDueStandard partyDueStandard;
+	@Column(nullable=false)
+	private double partyDueStandard;
 	
 	/**
 	 * 缴费类型：个人和单位
@@ -69,12 +69,7 @@ public class PartyDue {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public PartyDueStandard getPartyDueStandard() {
-		return partyDueStandard;
-	}
-	public void setPartyDueStandard(PartyDueStandard partyDueStandard) {
-		this.partyDueStandard = partyDueStandard;
-	}
+
 	public String getType() {
 		return type;
 	}
@@ -99,13 +94,16 @@ public class PartyDue {
 	public void setState(String state) {
 		this.state = state;
 	}
+	public double getPartyDueStandard() {
+		return partyDueStandard;
+	}
+	public void setPartyDueStandard(double partyDueStandard) {
+		this.partyDueStandard = partyDueStandard;
+	}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime
-				* result
-				+ ((partyDueStandard == null) ? 0 : partyDueStandard.hashCode());
 		result = prime * result + ((user == null) ? 0 : user.hashCode());
 		return result;
 	}
@@ -118,11 +116,6 @@ public class PartyDue {
 		if (getClass() != obj.getClass())
 			return false;
 		PartyDue other = (PartyDue) obj;
-		if (partyDueStandard == null) {
-			if (other.partyDueStandard != null)
-				return false;
-		} else if (!partyDueStandard.equals(other.partyDueStandard))
-			return false;
 		if (user == null) {
 			if (other.user != null)
 				return false;

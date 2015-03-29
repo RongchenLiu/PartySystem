@@ -47,11 +47,15 @@ public class IntroLetter {
 	@Column(nullable=false)
 	private Date time;
 	/**
-	 * 类型
+	 * 类型1：市内、市外
 	 */
-	@Column(nullable=false,length=50)
-	private String type;
-	
+	@Column(nullable=false,length=10)
+	private String typeOne;
+	/**
+	 * 类型2：电子/纸质
+	 */
+	@Column(nullable=false,length=10)
+	private String typeTwo;
 	/**
 	 * 转接原因
 	 */
@@ -120,13 +124,7 @@ public class IntroLetter {
 		this.number = number;
 	}
 
-	public String getType() {
-		return type;
-	}
 
-	public void setType(String type) {
-		this.type = type;
-	}
 
 	public String getReason() {
 		return reason;
@@ -182,6 +180,22 @@ public class IntroLetter {
 
 	public void setTime(Date time) {
 		this.time = time;
+	}
+
+	public String getTypeOne() {
+		return typeOne;
+	}
+
+	public void setTypeOne(String typeOne) {
+		this.typeOne = typeOne;
+	}
+
+	public String getTypeTwo() {
+		return typeTwo;
+	}
+
+	public void setTypeTwo(String typeTwo) {
+		this.typeTwo = typeTwo;
 	}
 
 	@Override

@@ -61,7 +61,7 @@ public class IntroLetterRecord {
 	@Column(nullable=false)
 	private int number;
 	/**
-	 * 状态 ：回收/发放/缺失
+	 * 状态 ：回收/发放
 	 */
 	@Column(nullable=false,length=50)
 	private String state;
@@ -75,6 +75,18 @@ public class IntroLetterRecord {
 	 */
 	@Column(nullable=false,length=50)
 	private String operation;
+	/**
+	 * 缺失
+	 */
+	@Column(nullable=false)
+	private int absence;
+	
+	public int getAbsence() {
+		return absence;
+	}
+	public void setAbsence(int absence) {
+		this.absence = absence;
+	}
 	public Long getId() {
 		return id;
 	}

@@ -6,6 +6,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  * 普通用户表
@@ -33,18 +34,23 @@ public class User {
 	/**
 	 * 学校
 	 */
-	@Column(nullable=false,length=50)
-	private String school;
+	@ManyToOne(optional=false)
+	private School school;
 	/**
 	 * 学院
 	 */
-	@Column(nullable=false,length=50)
-	private String college;
+	@ManyToOne(optional=false)
+	private College college;
 	/**
 	 * 所在组织
 	 */
+	@ManyToOne(optional=false)
+	private Organization organization;
+	/**
+	 * 年级
+	 */
 	@Column(nullable=false,length=50)
-	private String organization;
+	private String grade;
 	/**
 	 * 党员照片
 	 */
@@ -187,24 +193,6 @@ public class User {
 	}
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
-	}
-	public String getSchool() {
-		return school;
-	}
-	public void setSchool(String school) {
-		this.school = school;
-	}
-	public String getCollege() {
-		return college;
-	}
-	public void setCollege(String college) {
-		this.college = college;
-	}
-	public String getOrganization() {
-		return organization;
-	}
-	public void setOrganization(String organization) {
-		this.organization = organization;
 	}
 	public String getPhotoLoc() {
 		return photoLoc;
@@ -355,6 +343,34 @@ public class User {
 	}
 	public void setResume(String resume) {
 		this.resume = resume;
+	}
+	
+	
+	public String getGrade() {
+		return grade;
+	}
+	public void setGrade(String grade) {
+		this.grade = grade;
+	}
+	
+	
+	public School getSchool() {
+		return school;
+	}
+	public void setSchool(School school) {
+		this.school = school;
+	}
+	public College getCollege() {
+		return college;
+	}
+	public void setCollege(College college) {
+		this.college = college;
+	}
+	public Organization getOrganization() {
+		return organization;
+	}
+	public void setOrganization(Organization organization) {
+		this.organization = organization;
 	}
 	@Override
 	public int hashCode() {
